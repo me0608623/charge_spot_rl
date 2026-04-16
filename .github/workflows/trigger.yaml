@@ -1,0 +1,14 @@
+name: trigger-task
+run-name: ${{ github.actor }} is learning GitHub Actions
+on: 
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  do-something:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: hello
+      run: |
+        echo "hello"
